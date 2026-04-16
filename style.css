@@ -1608,4 +1608,14 @@ ul {
   .goods-grid {
     grid-template-columns: 1fr;
   }
+
+  .media-card {
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .media-card-info {
+    text-align: center;
+  }
 }
