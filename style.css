@@ -67,12 +67,6 @@ html {
 
 body {
   background-color: var(--color-bg);
-  /* 背景画像をページ全体に固定表示 — スクロールしても途切れない */
-  background-image: url('assets/hero-bg.jpg');
-  background-attachment: fixed;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
   color: var(--color-text-primary);
   font-family: var(--font-primary);
   font-weight: 400;
@@ -80,6 +74,21 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('assets/hero-bg.jpg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
 }
 
 img {
